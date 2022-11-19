@@ -122,7 +122,8 @@ class GameEngine(object):
                 narrations.append(narration_start_player)
             self.second_player.reduce_energy(damage_start_player)
             if self.second_player.is_dead():
-                narrations.append(f"{self.start_player.name} gana y aun le queda {self.start_player.energy} de energia")
+                narrations.append(f"{self.start_player.name} gana y aun le queda "
+                                  f"{self.start_player.energy} de energia")
                 return narrations
 
             narration_second_player, damage_second_player = self.second_player.get_narration_damage_combo_from_data(
@@ -132,23 +133,24 @@ class GameEngine(object):
                 narrations.append(narration_second_player)
             self.start_player.reduce_energy(damage_second_player)
             if self.start_player.is_dead():
-                narrations.append(f"{self.second_player.name} gana y aun le queda {self.second_player.energy} de energia")
+                narrations.append(f"{self.second_player.name} gana y aun le queda"
+                                  f" {self.second_player.energy} de energia")
                 return narrations
 
         return narrations
 
 
 if __name__ == "__main__":
-    moves_j1 = ["AASDSD", "S", ""]
-    strikes_j1 = ["P", "", "K"]
+    moves_j1 = ["D", "DSD", "S", "DSD", "SD"]
+    strikes_j1 = ["K", "P", "", "K", "P"]
     movements_combo_j1 = {
         'DSDP': MovementCombo('DSD', 'P', 3, '{player_name} conecta un Taladoken'),
         'SDK': MovementCombo('SD', 'K', 2, '{player_name} conecta un Remuyuken')
     }
     j1 = PlayerInfo(moves_j1, strikes_j1, 'Tony', movements_combo_j1)
 
-    moves_j2 = ["", "ASA", "DA", "AAA", "", "SA"]
-    strikes_j2 = ["P", "", "P", "K", "K", "K"]
+    moves_j2 = ["SA", "SA", "SA", "ASA", "SA"]
+    strikes_j2 = ["K", "", "K", "P", "P"]
     movements_combo_j2 = {
         'SAK': MovementCombo('SA', 'K', 3, '{player_name} conecta un Remuyuken'),
         'ASAP': MovementCombo('ASA', 'P', 2, '{player_name} conecta un Taladoken')
