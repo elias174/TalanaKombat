@@ -9,4 +9,4 @@ curl -X POST -H "Content-Type: application/json" -d '{
       "moves": ["SA", "SA", "SA", "ASA", "SA"],
       "strikes": ["K", "", "K", "P", "P"]
     }
-}' http://localhost:5000/game
+}' https://1jvx90ljsj.execute-api.us-west-2.amazonaws.com/dev/game

@@ -158,4 +158,5 @@ if __name__ == "__main__":
     j2 = PlayerInfo(moves_j2, strikes_j2, 'Arnoldo', movements_combo_j2)
 
     game = GameEngine(j1, j2)
-    print(*game.get_narration_of_game(), sep='\n')
+    print(game.get_narration_of_game())
+    # print(*game.get_narration_of_game(), sep='\n')
